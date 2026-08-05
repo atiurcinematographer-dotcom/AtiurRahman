@@ -22,3 +22,62 @@ document.querySelectorAll("section").forEach(section=>{
     section.classList.add("hidden");
     observer.observe(section);
 });
+// AUTO YOUTUBE THUMBNAIL SYSTEM
+
+
+const films = [
+
+{
+title:"Chalan Beel",
+url:"https://youtu.be/-fnXKx9BS5Y"
+},
+
+{
+title:"Nouka Baich",
+url:"https://youtu.be/xR3uxom4sYg"
+}
+
+];
+
+
+
+function youtubeID(url){
+
+return url.split("youtu.be/")[1];
+
+}
+
+
+
+const videoBox=document.getElementById("video-container");
+
+
+films.forEach(film=>{
+
+let id=youtubeID(film.url);
+
+
+videoBox.innerHTML += `
+
+<div class="video-card">
+
+<img src="https://img.youtube.com/vi/${id}/maxresdefault.jpg">
+
+
+<div class="video-info">
+
+<h3>${film.title}</h3>
+
+
+<a href="${film.url}" target="_blank">
+▶ Watch Film
+</a>
+
+
+</div>
+
+</div>
+
+`;
+
+});
