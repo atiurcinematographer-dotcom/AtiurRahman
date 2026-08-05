@@ -673,3 +673,48 @@ text-align:center;
 }
 
 }
+/* AUTO VIDEO THUMBNAIL */
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+
+.video-card{
+background:#111;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+
+
+.video-card img{
+width:100%;
+aspect-ratio:16/9;
+object-fit:cover;
+}
+
+
+.video-info{
+padding:25px;
+}
+
+
+.video-info h3{
+font-size:26px;
+margin-bottom:15px;
+}
+
+
+.video-info a{
+
+display:inline-block;
+background:#1FA35B;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+
+}
