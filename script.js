@@ -1,16 +1,24 @@
-// Portfolio Interactivity Script
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Mohammad Atiur Rahman's Portfolio Initialized Successfully.");
+// Navbar background on scroll
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector(".navbar");
 
-    // Smooth scroll effect or extra interactive handlers can be added here if needed in the future.
-    const cards = document.querySelectorAll('.card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.borderColor = 'rgba(197, 168, 128, 0.6)';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.borderColor = 'var(--border-color)';
-        });
+    if (window.scrollY > 50) {
+        nav.style.background = "rgba(0,0,0,.85)";
+    } else {
+        nav.style.background = "rgba(0,0,0,.35)";
+    }
+});
+
+// Smooth fade-in animation
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
     });
+});
+
+document.querySelectorAll("section").forEach(section=>{
+    section.classList.add("hidden");
+    observer.observe(section);
 });
